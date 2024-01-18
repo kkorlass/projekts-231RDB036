@@ -18,11 +18,13 @@ else:
 soup = BeautifulSoup(html_content, 'html.parser')
 
 for article in soup.find_all('article'):
+
+    current_time = datetime.now(utc)
+    article_time = None
     
     details_div = article.find('div', class_='details')
     if details_div:
 
-        current_time = datetime.now(utc)
         time_str = details_div.get_text().strip().split(' - ')[0]
         words = time_str.split()
         
@@ -38,9 +40,8 @@ for article in soup.find_all('article'):
             article_time = eastern.localize(article_time)
             article_time = article_time.astimezone(utc)
 
-        print(article_time)
-    
-    header = article.find('header')
-    if header:
-        title = header.get_text().strip()
-        print(title)
+    if article_time and (current_time - article_time < timedelta(hours=48)):
+        header = article.find('header')
+        if header:
+            title = header.get_text().strip()
+            print(title)
