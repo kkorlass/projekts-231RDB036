@@ -20,6 +20,7 @@ Python skripts, lai nolasītu jaunākos rakstus ziņu portālā Phoronix un izva
 ## Izmantošana
 ### Parastā instalācija
 Sāc `scrape.py` skriptu ar noklusējuma ziņu vecumu (48h): `python scrape.py`.
+
 Lai nomainītu ziņu vecumu pievieno stundu skaitu, kā argumentu, piemēram: `python scrape.py 16`.
 
 Tipiska izvade:
@@ -42,4 +43,5 @@ https://phoronix.com/news/Mesa-24.0-rc2-Released
 
 ### Python venv instalācija
 Aktivizē venv: `source venv/bin/activate`
+
 Tālāk visi soļi ir identiski parastajai instalācijai.
