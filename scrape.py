@@ -41,7 +41,15 @@ for article in soup.find_all('article'):
             article_time = article_time.astimezone(utc)
 
     if article_time and (current_time - article_time < timedelta(hours=48)):
+        
         header = article.find('header')
         if header:
             title = header.get_text().strip()
             print(title)
+
+        anchor = article.find('a')
+        if anchor:
+            link = "https://phoronix.com" + anchor['href']
+            print(link)
+
+        print()
