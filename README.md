@@ -5,13 +5,13 @@ Python skripts, lai nolasītu jaunākos rakstus ziņu portālā Phoronix un izva
 ## Instalācija
 
 ### Parastā instalācija
-1. Klonē git repozitoriju: `git clone https://github.com/kkorlass/projekts-231RDB036`
+1. Klonē git repozitoriju: `git clone https://github.com/kkorlass/projekts-231RDB036.git`
 2. Atver mapi project-231RDB036: `cd project-231RDB036`
 3. Instalē nepieciešamās pakotnes: `pip install requests beautifulsoup4 pytz`
 
 ### Python venv instalācija
 Šis instalācijas veids ir ieteicams sistēmām, kas neatbalsta globālo `pip`, piemēram, Arch Linux.
-1. Klonē git repozitoriju: `git clone https://github.com/kkorlass/projekts-231RDB036`
+1. Klonē git repozitoriju: `git clone https://github.com/kkorlass/projekts-231RDB036.git`
 2. Atver mapi project-231RDB036: `cd project-231RDB036`
 3. Izveido venv: `python -m venv venv`
 4. Aktivizē venv: `source venv/bin/activate`
