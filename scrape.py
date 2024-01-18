@@ -4,6 +4,15 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 from pytz import timezone, utc
 
+# Get CLI argument for article time
+if len(sys.argv) > 1:
+    try:
+        interval = int(sys.argv[1])
+    except ValueError:
+        interval = 48
+else:
+    interval = 48
+
 # Fetch site HTML
 url = 'https://phoronix.com'
 response = requests.get(url)
@@ -40,7 +49,7 @@ for article in soup.find_all('article'):
             article_time = eastern.localize(article_time)
             article_time = article_time.astimezone(utc)
 
-    if article_time and (current_time - article_time < timedelta(hours=48)):
+    if article_time and (current_time - article_time < timedelta(hours=interval)):
         
         header = article.find('header')
         if header:
