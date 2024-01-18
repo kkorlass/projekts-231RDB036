@@ -14,4 +14,7 @@ else:
 soup = BeautifulSoup(html_content, 'html.parser')
 
 for article in soup.find_all('article'):
-    print(article)
+    header = article.find('header')
+    if header:
+        title = header.get_text().strip()
+        print(title);
